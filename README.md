@@ -6,6 +6,23 @@ Welcome! This repository is the main entry point for the CS549 final
 project: a traffic speed forecasting competition built on the METR-LA
 sensor dataset.
 
+| | |
+|---|---|
+| **Course** | CS549 Machine Learning |
+| **Semester** | Fall 2026 |
+| **Project** | Traffic Forecasting Challenge |
+| **Dataset** | METR-LA (207 highway sensors, 5-minute readings) |
+| **Team size** | 4–5 students |
+| **Task** | previous 60 minutes → next 60 minutes of traffic speed |
+| **Primary metric** | Mean Absolute Error (MAE) — lower is better |
+| **Deliverables** | Project Proposal · Code & Model Submission · Leaderboard Submission · Final Report |
+| **Final project weight** | 30% of course grade |
+
+**Jump to:** [Getting Started](#getting-started) · [Required Models](#required-models) ·
+[Grading](#grading) · [`PROJECT_DESCRIPTION.md`](PROJECT_DESCRIPTION.md) (detailed assignment) ·
+[`DATA_DESCRIPTION.md`](DATA_DESCRIPTION.md) (data formats) ·
+[`RULES.md`](RULES.md) (collaboration & integrity rules)
+
 ## Overview
 
 Working in groups of four or five, you will build and compare machine
@@ -110,6 +127,16 @@ sensor_metadata.csv    -- sensor latitude/longitude
 Full details, array shapes, and the missing-data `valid_mask` are documented
 in [`DATA_DESCRIPTION.md`](DATA_DESCRIPTION.md).
 
+> **Generate predictions only for the Ids listed in `data/sample_submission.csv`.**
+> Some sensor / forecast-origin pairs were excluded because of long
+> missing-data intervals in that sensor's history. `sample_submission.csv`
+> is the authoritative submission schema — do not try to reconstruct the
+> exclusions yourself. Use
+> [`starter_code/create_submission.py`](starter_code/create_submission.py):
+> it reads the required Ids straight from `sample_submission.csv`, fills in
+> your predictions, and validates the result before writing
+> `submission.csv` (columns `Id,Prediction`).
+
 ## Deliverables
 
 ```text
@@ -135,10 +162,10 @@ Total Final Project:         30%
 Leaderboard performance credit is assigned by rank:
 
 ```text
-Top 10% of teams:                          full credit
->10%–30%:                                  90% credit
->30%–60%:                                  80% credit
-Remaining teams with a valid submission:   50% credit
+Top 10%:                                   100% of leaderboard points
+>10%–30%:                                  90% of leaderboard points
+>30%–60%:                                  80% of leaderboard points
+Remaining teams with a valid submission:   50% of leaderboard points
 No valid submission:                       0%
 ```
 
