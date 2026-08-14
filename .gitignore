@@ -1,0 +1,40 @@
+# Defensive excludes: these should never exist in this repository at all,
+# but are ignored anyway in case a script is ever pointed at the wrong
+# directory. Do not rely on this file as the primary safeguard -- the
+# student repository must simply never be given these files to begin with.
+instructor_private/
+**/solution.csv
+**/*ground_truth*
+**/*groundtruth*
+**/*test_label*
+**/*hidden_labels*
+**/*leaderboard_split*
+**/private_solution*
+**/public_solution*
+.env
+*.token
+
+# Student submission / experiment artifacts (but NOT the released
+# data/sample_submission.csv, which defines required Ids -- these patterns
+# match the exact filename "submission.csv" or "baseline_*_submission.csv"
+# anywhere in the tree, never "sample_submission.csv")
+submission.csv
+baseline_*_submission.csv
+outputs/
+*.pt
+*.pth
+*.ckpt
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
